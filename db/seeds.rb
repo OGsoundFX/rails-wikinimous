@@ -8,6 +8,11 @@
 
 require 'faker'
 
+puts "cleaning the database"
+Article.destroy_all
+
 10.times do
   Article.create(title: Faker::Movie.title, content: Faker::Movies::BackToTheFuture.quote)
 end
+
+puts "10 fake articles have been created"

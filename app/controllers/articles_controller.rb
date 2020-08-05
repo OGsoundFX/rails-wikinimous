@@ -16,7 +16,12 @@ class ArticlesController < ApplicationController
   end
 
   def create
-    raise
+    article = Article.new(article_params)
+    if article.save
+      redirect_to articles_path
+    else
+      render :new
+    end
   end
 
   private
